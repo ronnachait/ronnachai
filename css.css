@@ -1,0 +1,44 @@
+body { 
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+        }
+   h1{ 
+    font-family: fantasy;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+   }
+   .timetext{
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+   }
+   .button{ 
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+   }
+   .content { 
+    margin-top: 0px;
+    text-align: center;
+   }
+   .content2 { 
+    margin-top: 20px;
+    text-align: center;
+   }
+   .clearfix { 
+    overflow: auto;
+    background: rgba(145, 145, 145, 0.6);
+    width: 813px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+   }

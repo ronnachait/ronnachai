@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>StopClock</title>
+ <link rel="stylesheet" href="css.css"> 
+ </head>
+ <body>
+ <table width = "100%">
+ <tr>
+ <td>
+ <div class="content">
+ <h1>Digital Timer</h1>
+ <div class="clearfix" >
+ &nbsp;&nbsp;
+ <div class="timetext" style="float: left;" id = "timeshowmin">00</div>
+ <div class="timetext" style="float: left;">&nbsp;:&nbsp; </div> 
+ <div class="timetext" style="float: left;" id = "timeshowsec">00</div> 
+ <div class="timetext" style="float: left;">&nbsp;:&nbsp;</div> 
+ <div class="timetext" style="float: left;" id = "timeshowmsec">00</div>
+ </div>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td>
+ <div class="content2">
+ <input type="button" value="▷" class="button" onclick="timestartstop()"> 
+ <input type="button" value="⟳" class="button" onclick="timereset()">
+ </div>
+ </td>
+ </tr>
+ </table>
+ <script type="text/javascript">
+ var status = 0; 
+ var time = 0; 
+ function timestartstop(){ 
+ if(status == 1){ 
+ status = 0;
+ }else{ 
+ status = 1;
+ timecontrol();
+ }
+ }
+ function timereset(){
+ time = 0;
+ timeshowmin.innerHTML = "00";
+ timeshowsec.innerHTML = "00";
+ timeshowmsec.innerHTML = "00";
+ 
+ } 
+ function timecontrol(){ 
+ if(status==1){
+ setTimeout(function(){
+ time++; 
+ var min = Math.floor(time/100/60);
+ var sec = Math.floor(time/100);
+ var msec = time % 100;
+if (min < 10) min = "0" + min; 
+ if (sec >= 60) sec = sec % 60;
+ if (sec < 10) sec = "0" + sec;
+ if (msec < 10) msec = "0" + msec;
+ timeshowmin.innerHTML = min; 
+ timeshowsec.innerHTML = sec;
+ timeshowmsec.innerHTML = msec; 
+ timecontrol(); 
+ },10)
+ }
+ }
+ </script>
+ </body>
+</html>
